@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#075c46">
+  <meta name="description" content="A simple offline packing checklist for your Umrah journey.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Umrah Pack">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Umrah Pack</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">⌂</div>
+    <div><div class="brand">Umrah Pack</div><div class="subtitle">Your journey, thoughtfully packed</div></div>
+    <button id="installBtn" class="install-btn hidden" type="button">Install</button>
+  </header>
+
+  <main>
+    <section class="welcome card">
+      <div class="eyebrow">YOUR UMRAH CHECKLIST</div>
+      <h1>Pack with peace<br>of mind.</h1>
+      <p>Keep the essentials in one place. Tick things off as you go, and your progress will be saved on this device.</p>
+      <div class="progress-row">
+        <div class="progress-track"><div id="progressBar" class="progress-fill"></div></div>
+        <strong id="progressText">0% packed</strong>
+      </div>
+      <div class="progress-sub" id="countText">0 of 0 items packed</div>
+    </section>
+
+    <nav class="tabs" aria-label="Checklist categories">
+      <button class="tab active" data-filter="All">All items</button>
+      <button class="tab" data-filter="Essentials">Essentials</button>
+      <button class="tab" data-filter="Ihram">Ihram</button>
+      <button class="tab" data-filter="Clothing">Clothing</button>
+      <button class="tab" data-filter="Toiletries">Toiletries</button>
+      <button class="tab" data-filter="Health">Health</button>
+      <button class="tab" data-filter="Travel">Travel</button>
+    </nav>
+
+    <section class="list-heading">
+      <div><h2>What to pack</h2><p>Tap the circle when it’s packed.</p></div>
+      <button id="addToggle" class="add-btn" type="button" aria-label="Add a packing item">+</button>
+    </section>
+
+    <form id="addForm" class="add-form card hidden">
+      <label for="itemName">Item name</label>
+      <input id="itemName" maxlength="90" placeholder="e.g. Small drawstring bag" required>
+      <label for="itemCategory">Category</label>
+      <select id="itemCategory">
+        <option>Essentials</option><option>Ihram</option><option>Clothing</option>
+        <option>Toiletries</option><option>Health</option><option>Travel</option><option>Other</option>
+      </select>
+      <div class="form-actions"><button type="button" id="cancelAdd" class="secondary-btn">Cancel</button><button class="primary-btn" type="submit">Add item</button></div>
+    </form>
+
+    <div id="checklist" class="checklist"></div>
+
+    <section class="notes card">
+      <div class="notes-title"><div><h2>Notes for your trip</h2><p>Hotel, flight details, reminders or anything to remember.</p></div><span aria-hidden="true">✎</span></div>
+      <textarea id="notes" rows="4" placeholder="Add your notes here…"></textarea>
+      <div class="saved-line" id="savedLine">Saved on this device</div>
+    </section>
+
+    <section class="tip card">
+      <div class="tip-icon">☾</div><div><strong>A gentle reminder</strong><p>Check your airline’s baggage allowance and current Saudi entry requirements before you travel. Keep essential documents and any required medication in your hand luggage.</p></div>
+    </section>
+  </main>
+
+  <footer>May your Umrah be accepted <span lang="ar" dir="rtl">آمين</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js"></script>
+</body>
+</html>
