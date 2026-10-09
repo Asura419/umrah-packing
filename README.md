@@ -2,14 +2,6 @@
 
 A small, installable packing checklist that works offline after the first visit. It stores checked items, custom items, and notes in the browser on your device.
 
-## Free hosting with GitHub Pages
-1. Sign in or create an account at https://github.com/.
-2. Create a **new public repository**, for example `umrah-pack`.
-3. Upload all files from this folder to the top level of the repository. Make sure `index.html` is at the top level, not inside another folder.
-4. Open the repository's **Settings → Pages**.
-5. Under **Build and deployment**, select **Deploy from a branch**.
-6. Select branch **main** and folder **/(root)**, then save.
-7. Wait for the site to publish. Your address will look like `https://YOUR-USERNAME.github.io/umrah-pack/`.
 
 ## Install on your phone
 Open the published HTTPS link on your phone.
